@@ -37,7 +37,7 @@
 			$c->connect();
 			$result=mysql_query("select * from surveys where email='".$_SESSION['survey_email']."'");
 			if($result && mysql_num_rows($result)) error("The e-mail specified already exists in our database");
-			mysql_query(" INSERT INTO `surveys` ( `email` , `impressed` ) 
+			mysql_query(" INSERT INTO `surveys` ( `email` , `impressed` )  
 			VALUES ('".$_SESSION['survey_email']."', '".$_SESSION['survey_impressed']."') ");
 			$err=mysql_error($c->handle);
 			$c->close();
